@@ -9,3 +9,33 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+
+/*Estilos Generales*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+.app {
+    max-width: 500px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/*MediaQuerys para hacerlo responsive*/
+@media (max-width: 576px) {
+    .app {
+        max-width: 100%;
+        padding: 10px;
+    }
+    .todo-item {
+        font-size: 1.2rem;
+    }
+}
+
+
