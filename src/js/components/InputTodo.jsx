@@ -10,10 +10,13 @@ const InputTodo = ({addTodo}) => {
     // Si se cumple alguna de las dos condiciones, se llama a la función addTodo con la tarea actual y se limpia el campo de entrada.
     const handleSubmit = (e) => {
         if (e.key === "Enter" || e.type === "click") {
-            addTodo(task);
-            setTask("");
+            if (task.trim() !== "") {
+                addTodo(task);
+                setTask("");
+            }
         }
     }; 
+
     // Renderizado del componente 
     return (
         <Form className="mb-3">
@@ -24,7 +27,7 @@ const InputTodo = ({addTodo}) => {
                         placeholder="what is the task that needs to be done?"
                         value={task}
                         onChange={(e) => setTask(e.target.value)}
-                        onKeyPress={handleSubmit}
+                        onKeyDown={handleSubmit}
                     />
                 </Col>
                 <Col xs={3}>
