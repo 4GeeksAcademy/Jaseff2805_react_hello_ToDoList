@@ -24,5 +24,6 @@ const TodoList = ({todos, deleteTodo}) => {
         </ListGroup>
     );
 };
-
+// Exportación del componente TodoList
+// Este componente recibe dos props: todos y deleteTodo. Todos es un array de tareas y deleteTodo es una función que se llama para eliminar una tarea específica.
 export default TodoList;
