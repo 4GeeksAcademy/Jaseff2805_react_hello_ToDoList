@@ -9,7 +9,9 @@ const InputTodo = ({addTodo}) => {
     // Función para manejar el evento de envío del formulario. Se utiliza el operador logico OR (||) para comprobar si se ha presionado la tecla Enter o si se ha hecho clic en el botón.
     // Si se cumple alguna de las dos condiciones, se llama a la función addTodo con la tarea actual y se limpia el campo de entrada.
     const handleSubmit = (e) => {
+
         if (e.key === "Enter" || e.type === "click") {
+            e.preventDefault(); // Evita el comportamiento predeterminado del formulario
             if (task.trim() !== "") {
                 addTodo(task);
                 setTask("");
